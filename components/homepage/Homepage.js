@@ -16,20 +16,13 @@ import Testimonial from "../Testimonials/Testimonial";
 import Gallery from "../Gallery/Gallery";
 import About from "@/components/Abouts/About";
 import TestimonialFour from "../Testimonials/Testimonial-Four";
+import Newsletter from "../Newsletters/Newsletter";
 import sal from "sal.js";
 import Card from "../Cards/Card";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { useEffect, useRef } from "react";
 
 const Home = ({ blogs }) => {
-  const section1Ref = useRef(null);
-  const section2Ref = useRef(null);
-  const section3Ref = useRef(null);
-  const section4Ref = useRef(null);
-  const section5Ref = useRef(null);
-  const section6Ref = useRef(null);
-  const section7Ref = useRef(null);
-
   useEffect(() => {
     sal({
       threshold: 0.01,
@@ -40,7 +33,6 @@ const Home = ({ blogs }) => {
     <>
       <div
         id="home"
-        ref={section1Ref}
         className="bg-cover  rbt-banner-area rbt-banner-4 bg-center  header-transperent-spacer bg-[url('/images/bg/bg-image.jpg')]"
         style={{ paddingTop: "140px" }}
       >
@@ -78,7 +70,6 @@ const Home = ({ blogs }) => {
       </div>
       <div
         id="about"
-        ref={section2Ref}
         className="rbt-about-area bg-color-white rbt-section-gapTop pb_md--80 pb_sm--80 about-style-1"
       >
         <div className="container">
@@ -89,7 +80,6 @@ const Home = ({ blogs }) => {
       </div>
       <div
         id="Curriculum"
-        ref={section3Ref}
         className="rbt-course-area bg-color-light rbt-section-gap "
       >
         <div className="container">
@@ -117,14 +107,12 @@ const Home = ({ blogs }) => {
       </div>
       <div
         id="Counter"
-        ref={section4Ref}
         className="rbt-counterup-area bg-color-white rbt-section-gap"
       >
         <CounterTwo />
       </div>
       <div
         id="Courses"
-        ref={section4Ref}
         className="rbt-course-area bg-color-light rbt-section-gap "
       >
         <div className="container">
@@ -163,16 +151,11 @@ const Home = ({ blogs }) => {
           </div>
         </div>
       </div>
-      <div
-        id="Prices"
-        ref={section5Ref}
-        className="rbt-team-area bg-color-white rbt-section-gap"
-      >
+      <div id="Prices" className="rbt-team-area bg-color-white rbt-section-gap">
         <Pricing title="Histudy Course Plan" tag="COURSE PRICING" />
       </div>
       <div
         id="Teachers"
-        ref={section6Ref}
         className="rbt-team-area bg-color-light rbt-section-gap"
       >
         <div className="container">
@@ -204,8 +187,7 @@ const Home = ({ blogs }) => {
         </div>
       </div>
       <div
-        id="Testimonial"
-        ref={section7Ref}
+        id="Testimonials"
         className="rbt-testimonial-area bg-color-white rbt-section-gap overflow-hidden"
       >
         <div className="wrapper mb--60">
@@ -230,7 +212,7 @@ const Home = ({ blogs }) => {
       <div className="rbt-team-area bg-color-light rbt-section-gap">
         <TestimonialFour />
       </div>
-      <Gallery />
+      <Newsletter />
     </>
   );
 };

@@ -122,9 +122,9 @@ const Nav = () => {
             className={`${
               activeMenuItem === "blog" ? "open" : ""
             } cursor-pointer`}
-            onClick={() => scrollToSection("Testimonial")}
+            onClick={() => scrollToSection("Testimonials")}
           >
-            Testimonial
+            Testimonials
           </a>
         </li>
       </ul>

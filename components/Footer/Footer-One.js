@@ -92,12 +92,11 @@ const FooterOne = ({ bgColor }) => {
                         </li>
                       </ul>
 
-                      <form className="newsletter-form mt--20" action="#">
+                      {/* <form className="newsletter-form mt--20" action="#">
                         <h6 className="w-600">Newsletter</h6>
                         <p className="description">{footer.descriptionTwo}</p>
 
                         <div className="form-group right-icon icon-email mb--20">
-                          {/* <label htmlFor="email">Enter Your Email Here</label> */}
                           <input
                             id="email"
                             type="email"
@@ -113,7 +112,7 @@ const FooterOne = ({ bgColor }) => {
                             <span data-text="Submit Now">Submit Now</span>
                           </button>
                         </div>
-                      </form>
+                      </form> */}
                     </div>
                   </div>
                 </div>
