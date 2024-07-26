@@ -5,12 +5,12 @@ import Store from "@/redux/store";
 import Context from "@/context/Context";
 
 import MobileMenu from "@/components/Header/MobileMenu";
-import Kindergarten from "@/components/04-kindergarten/04-kindergarten";
+import Home from "@/components/homepage/Homepage";
 import Cart from "@/components/Header/Offcanvas/Cart";
 import FooterOne from "@/components/Footer/Footer-One";
 import HeaderStyleEight from "@/components/Header/HeaderStyle-Eight";
 
-const KindergartenPage = ({ getBlog }) => {
+const HomePage = ({ getBlog }) => {
   return (
     <>
       <Provider store={Store}>
@@ -19,7 +19,7 @@ const KindergartenPage = ({ getBlog }) => {
           <HeaderStyleEight headerSticky="rbt-sticky" headerType="" />
           <Cart />
 
-          <Kindergarten blogs={getBlog} />
+          <Home blogs={getBlog} />
 
           <FooterOne />
         </Context>
@@ -28,4 +28,4 @@ const KindergartenPage = ({ getBlog }) => {
   );
 };
 
-export default KindergartenPage;
+export default HomePage;

@@ -1,5 +1,5 @@
 import BackToTop from "../backToTop";
-import KindergartenPage from "./(home)";
+import HomePage from "./(home)";
 import { getAllPostsMeta } from "@/mdx";
 import type { Metadata } from "next";
 
@@ -15,7 +15,7 @@ const Home = async () => {
   const blog = await getAllPostsMeta();
   return (
     <>
-      <KindergartenPage getBlog={blog} />
+      <HomePage getBlog={blog} />
       <BackToTop />
     </>
   );

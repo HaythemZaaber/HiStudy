@@ -6,9 +6,9 @@ import Link from "next/link";
 import AboutData from "../../data/elements/about.json";
 import { useParallax } from "react-scroll-parallax";
 
-import aboutImg7 from "../../public/images/about/about-07.jpg";
-import aboutImg8 from "../../public/images/about/about-08.jpg";
-import aboutImg9 from "../../public/images/about/about-09.jpg";
+import aboutImg9 from "../../public/images/homepage/about/image(1).jpg";
+import aboutImg7 from "../../public/images/homepage/about/image(2).jpg";
+import aboutImg8 from "../../public/images/homepage/about/image(3).jpg";
 
 const About = () => {
   const { ref: ref1, style: style1 } = useParallax({

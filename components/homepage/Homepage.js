@@ -19,9 +19,17 @@ import TestimonialFour from "../Testimonials/Testimonial-Four";
 import sal from "sal.js";
 import Card from "../Cards/Card";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-const Kindergarten = ({ blogs }) => {
+const Home = ({ blogs }) => {
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  const section4Ref = useRef(null);
+  const section5Ref = useRef(null);
+  const section6Ref = useRef(null);
+  const section7Ref = useRef(null);
+
   useEffect(() => {
     sal({
       threshold: 0.01,
@@ -32,6 +40,7 @@ const Kindergarten = ({ blogs }) => {
     <>
       <div
         id="home"
+        ref={section1Ref}
         className="bg-cover  rbt-banner-area rbt-banner-4 bg-center  header-transperent-spacer bg-[url('/images/bg/bg-image.jpg')]"
         style={{ paddingTop: "140px" }}
       >
@@ -41,42 +50,14 @@ const Kindergarten = ({ blogs }) => {
               <div className="col-md-12">
                 <div className="content text-start">
                   <div className="inner">
-                    {/* <div className="mb--20">
-                      <Link href="#" className="rbt-badge-2">
-                        <div className="image">
-                          <Image
-                            src={img}
-                            width={30}
-                            height={30}
-                            alt="Education Images"
-                          />
-                        </div>{" "}
-                        Learn with <strong>Fatima Asrafy</strong>
-                      </Link>
-                    </div> */}
                     <h1 className="title">
                       Transform Your Future with <br /> Expert-Led Online
                       Courses.
                     </h1>
                     <p className="description">
-                      {/* We just don&apos;t give our student only <br /> lecture
-                      but real life experience.
-                      <br /> */}
                       Join thousands of learners and gain new skills <br /> from
                       the comfort of your home.
                     </p>
-
-                    {/* <ul className="rbt-list-style-2">
-                      <li>
-                        <i className="feather-check"></i>No Cridit Card
-                      </li>
-                      <li>
-                        <i className="feather-check"></i>14 Days Trial
-                      </li>
-                      <li>
-                        <i className="feather-check"></i>Free For Teachers
-                      </li>
-                    </ul> */}
 
                     <div className="slider-btn">
                       <Link
@@ -95,9 +76,9 @@ const Kindergarten = ({ blogs }) => {
           </div>
         </div>
       </div>
-
       <div
         id="about"
+        ref={section2Ref}
         className="rbt-about-area bg-color-white rbt-section-gapTop pb_md--80 pb_sm--80 about-style-1"
       >
         <div className="container">
@@ -106,8 +87,11 @@ const Kindergarten = ({ blogs }) => {
           </ParallaxProvider>
         </div>
       </div>
-
-      <div className="service-wrapper rbt-section-gap bg-color-white">
+      <div
+        id="Curriculum"
+        ref={section3Ref}
+        className="rbt-course-area bg-color-light rbt-section-gap "
+      >
         <div className="container">
           <div className="row mb--60">
             <div className="col-lg-12">
@@ -131,46 +115,18 @@ const Kindergarten = ({ blogs }) => {
           </div>
         </div>
       </div>
-
-      {/* <div className="rbt-callto-action-area mt_dec--half">
-        <CallToAction />
-      </div> */}
-
-      {/* <div className="rbt-course-area bg-color-light rbt-section-gap default-callto-action-overlap">
-        <div className="container">
-          <div className="row mb--60">
-            <div className="col-lg-12">
-              <div className="section-title text-center">
-                <span className="subtitle bg-secondary-opacity">
-                  Histudy Course
-                </span>
-                <h2 className="title">Weekly Online Classes.</h2>
-                <p className="description has-medium-font-size mt--20">
-                  There are many variations of passages of the Ipsum available,
-                  but the majority have suffered alteration in some form, by
-                  injected humour.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row g-5">
-            <CardFive />
-          </div>
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="load-more-btn mt--60 text-center">
-                <a className="rbt-btn rbt-marquee-btn" href="#">
-                  <span data-text="Load More Course">Load More Course</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      <div className="rbt-course-area bg-color-light rbt-section-gap default-callto-action-overlap">
+      <div
+        id="Counter"
+        ref={section4Ref}
+        className="rbt-counterup-area bg-color-white rbt-section-gap"
+      >
+        <CounterTwo />
+      </div>
+      <div
+        id="Courses"
+        ref={section4Ref}
+        className="rbt-course-area bg-color-light rbt-section-gap "
+      >
         <div className="container">
           <div className="row mb--55 g-5 align-items-end">
             <div className="col-lg-6 col-md-6 col-12">
@@ -207,16 +163,18 @@ const Kindergarten = ({ blogs }) => {
           </div>
         </div>
       </div>
-
-      <div className="rbt-counterup-area bg-color-white rbt-section-gap">
-        <CounterTwo />
-      </div>
-
-      <div className="rbt-pricing-area bg-color-light rbt-section-gap">
+      <div
+        id="Prices"
+        ref={section5Ref}
+        className="rbt-team-area bg-color-white rbt-section-gap"
+      >
         <Pricing title="Histudy Course Plan" tag="COURSE PRICING" />
       </div>
-
-      <div className="rbt-team-area bg-color-white rbt-section-gap">
+      <div
+        id="Teachers"
+        ref={section6Ref}
+        className="rbt-team-area bg-color-light rbt-section-gap"
+      >
         <div className="container">
           <div className="row mb--60">
             <div className="col-lg-12">
@@ -245,8 +203,11 @@ const Kindergarten = ({ blogs }) => {
           </div>
         </div>
       </div>
-
-      <div className="rbt-testimonial-area bg-color-light rbt-section-gap overflow-hidden">
+      <div
+        id="Testimonial"
+        ref={section7Ref}
+        className="rbt-testimonial-area bg-color-white rbt-section-gap overflow-hidden"
+      >
         <div className="wrapper mb--60">
           <div className="container">
             <div className="row">
@@ -266,89 +227,7 @@ const Kindergarten = ({ blogs }) => {
         </div>
         <Testimonial />
       </div>
-
-      {/* <div className="rbt-rbt-blog-area rbt-section-gap bg-color-white">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="section-title text-center">
-                <span className="subtitle bg-secondary-opacity">
-                  Histudy Post
-                </span>
-                <h2 className="title">From Our Post.</h2>
-                <p className="description has-medium-font-size mt--20">
-                  There are many variations of passages of the Ipsum available,
-                  but the majority have suffered alteration in some form, by
-                  injected humour.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row g-5 mt--30">
-            {blogs.slice(0, 3).map((data, index) => (
-              <div className="col-lg-4 col-md-6 col-sm-12 col-12" key={index}>
-                <div className="rbt-card variation-02 rbt-hover">
-                  <div className="rbt-card-img">
-                    <Link href={`/blog-details/${data.slug}`}>
-                      <Image
-                        src={data.thumbnail.large}
-                        width={450}
-                        height={267}
-                        priority
-                        alt="Card image"
-                      />{" "}
-                    </Link>
-                  </div>
-                  <div className="rbt-card-body">
-                    <h5 className="rbt-card-title">
-                      <Link href={`/blog-details/${data.slug}`}>
-                        {data.title}
-                      </Link>
-                    </h5>
-                    <p className="rbt-card-text">{data?.desc}</p>
-                    <div className="rbt-card-bottom">
-                      <Link
-                        className="transparent-button"
-                        href={`/blog-details/${data.slug}`}
-                      >
-                        Learn More
-                        <i>
-                          {" "}
-                          <svg
-                            width="17"
-                            height="12"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g stroke="#27374D" fill="none" fillRule="evenodd">
-                              <path d="M10.614 0l5.629 5.629-5.63 5.629" />
-                              <path
-                                strokeLinecap="square"
-                                d="M.663 5.572h14.594"
-                              />
-                            </g>
-                          </svg>
-                        </i>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="load-more-btn mt--60 text-center">
-                <a className="rbt-btn rbt-marquee-btn" href="#">
-                  <span data-text="View All Post">View All Post</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      <div className="rbt-team-area bg-color-white rbt-section-gap">
+      <div className="rbt-team-area bg-color-light rbt-section-gap">
         <TestimonialFour />
       </div>
       <Gallery />
@@ -356,4 +235,4 @@ const Kindergarten = ({ blogs }) => {
   );
 };
 
-export default Kindergarten;
+export default Home;
