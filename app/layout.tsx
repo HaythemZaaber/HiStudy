@@ -20,6 +20,7 @@ import "swiper/css/thumbs";
 // ========= Plugins CSS END =========
 
 import "../public/scss/styles.scss";
+import "../public/css/style.css";
 
 import { Inter } from "next/font/google";
 import "./globals.css";

@@ -320,7 +320,7 @@
       "body": [
         {
           "title": "Best Coaching",
-          "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima error reiciendis.",
+          "desc": "Meet our passionate teachers from around the globe, each bringing their unique expertise and cultural perspectives to the classroom.",
           "img": "/images/icons/card-icon-1.png",
           "bgOne": true,
           "bgTwo": false,
@@ -347,7 +347,7 @@
         },
         {
           "title": "Convenient practice",
-          "desc": "Convenient practice dolor sit adipisicing elit. Minima error reiciendis.",
+          "desc": "Our lessons are designed to be interactive and fun, using games, videos, and hands-on activities to make learning exciting.",
           "img": "/images/icons/card-icon-2.png",
           "bgTwo": true,
           "bgOne": false,
@@ -374,7 +374,7 @@
         },
         {
           "title": "Video Lecture",
-          "desc": "Video Lecture sit, amet consectetur adipisicing elit. Minima error reiciendis..",
+          "desc": "Teachers customize lessons to match each child’s learning pace and style..",
           "img": "/images/icons/card-icon-3.png",
           "bgThree": true,
           "bgOne": false,
@@ -401,7 +401,7 @@
         },
         {
           "title": "Live Class",
-          "desc": "Live Class dolor sit, amet consectetur adipisicing elit. Minima error reiciendis.",
+          "desc": "Schedule classes at times that work best for your family, with options for one-on-one or small group sessions.",
           "img": "/images/icons/card-icon-4.png",
           "bgFour": true,
           "bgOne": false,

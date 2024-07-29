@@ -3,23 +3,12 @@ import Link from "next/link";
 
 import ServiceData from "../../data/elements/service.json";
 
-const ServiceNine = ({ head }) => {
+const ServiceNine = () => {
   return (
     <>
       {ServiceData &&
         ServiceData.serviceNine.map((data, index) => (
           <div className="container" key={index}>
-            {head === undefined ? (
-              <div className="row mb--60">
-                <div className="col-lg-12">
-                  <div className="section-title text-center">
-                    <h2 className="title">{data.sectionTitle}</h2>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
             <div className="row row--15 mt_dec--30">
               {data.body.map((item, innerIndex) => (
                 <div
@@ -40,7 +29,7 @@ const ServiceNine = ({ head }) => {
                           : ""
                       }`}
                     >
-                      <div className="rbt-flipbox-front rbt-flipbox-face inner">
+                      <div className="rbt-flipbox-front rbt-flipbox-face inner h-[100%]">
                         <div className="icon">
                           <Image
                             src={item.img}
@@ -49,13 +38,15 @@ const ServiceNine = ({ head }) => {
                             alt="card-icon"
                           />
                         </div>
-                        <div className="content">
-                          <h5 className="title">
-                            <Link href="#">{item.title}</Link>
-                          </h5>
-                          <p>{item.desc}</p>
+                        <div className="flex flex-col justify-between h-[80%]">
+                          <div className="content">
+                            <h5 className="title">
+                              <Link href="#">{item.title}</Link>
+                            </h5>
+                            <p>{item.desc}</p>
+                          </div>
                           <Link
-                            className="rbt-btn-link stretched-link"
+                            className="rbt-btn-link stretched-link mt-16 mb-6"
                             href="#"
                           >
                             Learn More<i className="feather-arrow-right"></i>

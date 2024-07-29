@@ -3,132 +3,80 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import MenuData from "../../data/MegaMenu.json";
-
 import CourseLayout from "./NavProps/CourseLayout";
 import PageLayout from "./NavProps/PageLayout";
 import ElementsLayout from "./NavProps/ElementsLayout";
-
 import addImage from "../../public/images/service/mobile-cat.jpg";
 
 const Nav = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState(null);
+  const [activeSection, setActiveSection] = useState("");
+
+  const sections = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "Courses", label: "Courses" },
+    { id: "Teachers", label: "Teachers" },
+    { id: "Testimonials", label: "Testimonials" },
+  ];
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      // threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+        // observer.observe(element);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, [sections]);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: "smooth" });
   };
 
-  const pathname = usePathname();
-
-  const isActive = (href) => pathname.startsWith(href);
-
-  const toggleMenuItem = (item) => {
-    setActiveMenuItem(activeMenuItem === item ? null : item);
-  };
-
   return (
     <nav className="mainmenu-nav">
       <ul className="mainmenu">
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "home" ? "open" : ""
-            } cursor-pointer`}
-            // onClick={() => toggleMenuItem("home")}
-            onClick={() => scrollToSection("home")}
-            // href="#home"
+        {sections.map((section) => (
+          <li
+            key={section.id}
+            className="with-megamenu has-menu-child-item position-static"
           >
-            Home
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item">
-          <a
-            className={`${
-              activeMenuItem === "courses" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("about")}
-            // href="#about"
-          >
-            About
-          </a>
-        </li>
-
-        <li className="has-dropdown has-menu-child-item">
-          <a
-            className={`${
-              activeMenuItem === "dashboard" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Curriculum")}
-          >
-            Curriculum
-            {/* <i className="feather-chevron-down"></i> */}
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "pages" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Counter")}
-          >
-            Counter
-            {/* <i className="feather-chevron-down"></i> */}
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "elements" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Courses")}
-          >
-            Courses
-            {/* <i className="feather-chevron-down"></i> */}
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "blog" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Prices")}
-          >
-            Prices
-            {/* <i className="feather-chevron-down"></i> */}
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "blog" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Teachers")}
-          >
-            Teachers
-          </a>
-        </li>
-
-        <li className="with-megamenu has-menu-child-item position-static">
-          <a
-            className={`${
-              activeMenuItem === "blog" ? "open" : ""
-            } cursor-pointer`}
-            onClick={() => scrollToSection("Testimonials")}
-          >
-            Testimonials
-          </a>
-        </li>
+            <a
+              className={`${
+                activeSection === section.id ? "active" : ""
+              } cursor-pointer`}
+              onClick={() => scrollToSection(section.id)}
+            >
+              {section.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
+
 export default Nav;
